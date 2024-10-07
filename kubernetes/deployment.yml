@@ -1,0 +1,28 @@
+apiVersion : apps/v1
+kind : Deployment
+metadata :
+  name : django_app1
+spec :
+  replicas : 2
+  selector :
+    matchLabels :
+      app : django_app1
+  template :
+    metadata :
+      labels :
+        app : django_app1
+    spec :
+      containers :
+      - name : django_app1
+        image : wences3160/django_app1:latest
+        volumeMounts:
+          - name: env-config-volume
+            mountPath: Django_CICD_app/.env     # This path should match where your application expects the .env file
+            subPath: .env
+        ports :
+          - containerPort : 8999
+        imagePullPolicy : Always
+      volumes:
+      - name: env-config-volume
+        configMap:
+          name: env-config

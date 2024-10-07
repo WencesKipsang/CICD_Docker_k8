@@ -1,0 +1,9 @@
+
+services:    
+
+  django_service:
+    build:
+      context: ./Django
+    image: django_app:latest
+  
+  
