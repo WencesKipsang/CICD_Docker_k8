@@ -5,7 +5,7 @@ WORKDIR /Django_CICD_app
 
 ENV PYTHONUNBUFFERED = 1
 
-COPY ./scripts /scripts
+COPY CICD_DOCKER_K8/scripts /scripts
 RUN chmod +x /scripts/*
 
 COPY requirements.txt requirements.txt
