@@ -92,10 +92,10 @@ pipeline {
             steps {
                 echo "Pushing"
                 script {
-                    dir('/root/frs_cicd/CICD_Docker_k8/kubernetes') { 
+                    dir('/root/frs_cicd/CICD_Docker_k8/') { 
                         sh '''
-                        kubectl apply -k deploy/django_app:latest
-                            '''                                                                                                                
+                        kubectl apply -k kubernetes/
+                        '''                                                                                                                
                         echo "docker pushing images complete"
                     } 
                 }
