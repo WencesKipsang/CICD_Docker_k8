@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     dir('/root/frs_cicd/CICD_Docker_k8') {
-                       git branch: 'main', credentialsId: 'b943825b-5659-4d27-9fdf-b19746a0bc16', url: 'https://github.com/WencesKipsang/CICD_Docker.git' 
+                       git branch: 'main', credentialsId: 'b943825b-5659-4d27-9fdf-b19746a0bc16', url: 'https://github.com/WencesKipsang/CICD_Docker_k8.git' 
                     } 
                 }
             }
