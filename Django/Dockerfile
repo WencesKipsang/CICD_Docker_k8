@@ -13,7 +13,7 @@ RUN pip3 install -r requirements.txt --no-cache-dir
 
 COPY . .
 
-RUN chmod +x /scripts/*
+RUN chmod +x /scripts/
 # RUN python3  manage.py collectstatic --noinput
 EXPOSE 8999 
  CMD [ "entrypoint.sh"]
