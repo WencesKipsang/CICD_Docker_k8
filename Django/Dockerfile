@@ -5,13 +5,15 @@ WORKDIR /Django_CICD_app
 
 ENV PYTHONUNBUFFERED = 1
 
-COPY CICD_DOCKER_K8/scripts /scripts
-RUN chmod +x /scripts/*
+# COPY /scripts /scripts
+# RUN chmod +x /scripts/*
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt --no-cache-dir
 
 COPY . .
+
+RUN chmod +x /scripts/*
 # RUN python3  manage.py collectstatic --noinput
 EXPOSE 8999 
  CMD [ "entrypoint.sh"]
