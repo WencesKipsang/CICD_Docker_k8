@@ -94,11 +94,10 @@ pipeline {
                 script {
                     dir('/root/frs_cicd/CICD_Docker_k8/kubernetes') { 
                         sh '''
-                        kubectl apply -f deployment.yaml
-                        kubectl apply -f service.yaml
+                        kubectl apply -k kubernetes/ --validate=false
                         '''                                                                                                                
                         echo "docker pushing images complete"
-                        //  kubectl apply -k kubernetes/
+                         
                     } 
                 }
             }
