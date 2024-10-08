@@ -92,7 +92,7 @@ pipeline {
             steps {
                 echo "Pushing"
                 script {
-                    dir('/root/frs_cicd/CICD_Docker_k8/kubernetes') { 
+                    dir('/root/frs_cicd/CICD_Docker_k8/') { 
                         sh '''
                         kubectl apply -k kubernetes/ --validate=false
                         '''                                                                                                                
