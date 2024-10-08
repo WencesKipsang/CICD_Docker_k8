@@ -3,7 +3,7 @@ kind : Deployment
 metadata :
   name : django_app1
 spec :
-  replicas : 2
+  replicas : 3
   selector :
     matchLabels :
       app : django_app1
