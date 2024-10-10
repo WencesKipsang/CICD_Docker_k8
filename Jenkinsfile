@@ -93,10 +93,14 @@ pipeline {
                 echo "Pushing"
                 script {
                     dir('/root/frs_cicd/CICD_Docker_k8/') { 
-                        sh '''
+                        kubernetesDiploy(
+                            configs: 'kubectl apply -k kubernetes/',
+                            credentialsId: '976d2ea3-c997-4174-8639-db86633aec6f'
+                            sh '''
                         kubectl apply -k kubernetes/ --validate=false
-                        '''                                                                                                                
-                        echo "docker pushing images complete"
+                        '''
+                        )
+                        
                          
                     } 
                 }
